@@ -341,6 +341,7 @@ p {
       &-title {
         font-size: 3rem;
         grid-column: span $grid-col-4;
+        text-align: center;
       }
       .purple {
         background-color: $brand-clr;

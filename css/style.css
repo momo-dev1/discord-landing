@@ -408,6 +408,7 @@ p {
 .hero__download__content-title {
   font-size: 3rem;
   grid-column: span 4;
+  text-align: center;
 }
 
 .hero__download__content .purple {
