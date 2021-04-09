@@ -146,7 +146,7 @@ p {
 
 .hero__main .hero__content .button-group {
   margin-top: 2rem;
-  width: 60%;
+  width: 80%;
 }
 
 @media screen and (min-width: 768px) {
