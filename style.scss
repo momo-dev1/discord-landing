@@ -101,7 +101,7 @@ p {
 }
 //======sections======//
 .hero {
-  background: url("/assets/images/hero-bg.jpg") center/cover;
+  background: url("discord-clone/assets/images/hero-bg.jpg") center/cover;
 
   &__header {
     @include flex-c;
