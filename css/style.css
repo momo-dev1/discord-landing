@@ -58,7 +58,7 @@ p {
 }
 
 .hero {
-  background: url("/images/hero-bg.jpg") center/cover;
+  background: url("./images/hero-bg.jpg") center/cover;
 }
 
 .hero__header {
