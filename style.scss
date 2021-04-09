@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//variables//
+$light-clr: #fff;
+$dark-clr: #23272a;
+$brand-clr: #7289da;
+$brand-clr-2: #7289dad5;
+$off-white-clr: #f6f6f6;
+$general-font-size: 2rem;
+$primary-title-font-size: 4.8rem;
+$secondary-title-font-size: 4rem;
+$font-light: 300;
+$font-medium: 400;
+$font-bold: 700;
+$grid-col-2: 2;
+$grid-col-4: 4;
+$grid-col-8: 8;
+$section-spacing: 5.6rem 2.4rem;
+$container-width: 126rem;
+
+body {
+  font-size: $general-font-size;
+  font-family: "Open Sans", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: 0;
+}
+button:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+h2,
+h3 {
+  font-weight: $font-bold;
+}
+p {
+  font-weight: $font-light;
+}
+
+//======Mixins======//
+@mixin flex-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat($grid-col-4, 1fr);
+  gap: 0 2rem;
+  padding: $section-spacing;
+}
+
+//======Global======//
+.container {
+  max-width: $container-width;
+  margin: -0.6rem auto;
+}
+.btn {
+  padding: 1.5rem 2.5rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: all 350ms ease-in-out;
+}
+//======sections======//
+.hero {
+  background: url("/assets/images/hero-bg.jpg") center/cover;
+
+  &__header {
+    @include flex-c;
+    justify-content: space-between;
+    padding: 2rem;
+    .logo {
+      height: 4rem;
+    }
+    .nav {
+      @include flex-c;
+
+      &__btn {
+        font-size: 1.4rem;
+        padding: 0.7rem 1.6rem;
+        background-color: $light-clr;
+        border-radius: 2rem;
+        margin-right: 1rem;
+        color: $dark-clr;
+        cursor: pointer;
+      }
+      &__list {
+        @include flex-c;
+        display: none;
+      }
+    }
+  }
+
+  &__main {
+    @include grid;
+    @include tablet {
+      justify-items: center;
+    }
+    .hero__content {
+      grid-column: span $grid-col-4;
+      color: $light-clr;
+      @include tablet {
+        margin: auto;
+        text-align: center;
+      }
+      &-title {
+        font-size: $primary-title-font-size;
+        @include tablet {
+          margin: auto;
+        }
+      }
+      &-desc {
+        line-height: 3.2rem;
+        margin-top: 2rem;
+        @include tablet {
+          max-width: 70%;
+          margin: auto;
+        }
+      }
+      .button-group {
+        margin-top: 2rem;
+        width: 60%;
+        @include tablet {
+          width: 100%;
+        }
+        .light {
+          color: $dark-clr;
+          &:hover {
+            color: $brand-clr;
+          }
+        }
+        .dark {
+          margin-top: 1rem;
+          color: $light-clr;
+          background-color: $dark-clr;
+          &:hover {
+            background-color: rgb(59, 59, 59);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+    }
+  }
+
+  &__collaboration {
+    .collaboration__content {
+      @include grid;
+      @include tablet {
+        grid-template-columns: repeat($grid-col-8, 1fr);
+      }
+      img {
+        grid-column: span 4;
+        object-fit: contain;
+        @include tablet {
+          margin: auto;
+        }
+      }
+      .collaboration {
+        grid-column: span 4;
+        margin-top: 3rem;
+
+        &-title {
+          font-size: 4rem;
+        }
+        &-desc {
+          line-height: 3.5rem;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+
+  &__connect {
+    background-color: $off-white-clr;
+    .connect__content {
+      @include grid;
+      @include tablet {
+        grid-template-columns: repeat($grid-col-8, 1fr);
+      }
+      img {
+        grid-column: span 4;
+        object-fit: contain;
+        @include tablet {
+          order: 2;
+          margin: auto;
+        }
+      }
+      .connect {
+        grid-column: span 4;
+        margin-top: 3rem;
+
+        &-title {
+          font-size: 4rem;
+        }
+        &-desc {
+          line-height: 3.5rem;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+
+  &__moderation {
+    .moderation__content {
+      @include grid;
+      @include tablet {
+        grid-template-columns: repeat($grid-col-8, 1fr);
+      }
+      img {
+        grid-column: span $grid-col-4;
+        object-fit: contain;
+        @include tablet {
+          margin: auto;
+        }
+      }
+      .moderation {
+        grid-column: span $grid-col-4;
+        margin-top: 3rem;
+
+        &-title {
+          font-size: 4rem;
+        }
+        &-desc {
+          line-height: 3.5rem;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+
+  &__video-call {
+    background-color: $off-white-clr;
+    .video-call__content {
+      @include grid;
+
+      img {
+        grid-column: span 4;
+        object-fit: contain;
+        @include desktop {
+          margin: auto;
+        }
+      }
+      .video-call {
+        grid-column: span 4;
+        margin-top: 3rem;
+        @include tablet {
+          text-align: center;
+        }
+        &-title {
+          font-size: 4rem;
+        }
+        &-desc {
+          line-height: 3.5rem;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+
+  &__download {
+    &__content {
+      @include grid;
+      justify-items: center;
+      gap: 2rem;
+      position: relative;
+      .sparkles {
+        grid-column: span $grid-col-4;
+      }
+      &-title {
+        font-size: 3rem;
+        grid-column: span $grid-col-4;
+      }
+      .purple {
+        background-color: $brand-clr;
+        grid-column: span $grid-col-4;
+        color: white;
+        &:hover {
+          background-color: $brand-clr-2;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  @include grid;
+  background-color: $dark-clr;
+  color: $light-clr;
+  @include tablet {
+    grid-template-columns: repeat($grid-col-8, 1fr);
+  }
+  overflow: hidden;
+  gap: 2rem;
+  &-top {
+    grid-column: span $grid-col-4;
+    @include desktop {
+      grid-column: span $grid-col-2;
+    }
+    h2 {
+      color: $brand-clr;
+      margin-bottom: 2rem;
+    }
+    .flag {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+      img {
+        margin-right: 0.8rem;
+        height: 2rem;
+      }
+    }
+  }
+  &-mid {
+    @include grid;
+    padding: 0;
+    gap: 2rem;
+    grid-column: span $grid-col-4;
+    @include desktop {
+      grid-column: 3/-1;
+    }
+    .footer-links {
+      grid-column: span $grid-col-2;
+      @include desktop {
+        grid-column: span 1;
+      }
+      h4 {
+        color: $brand-clr;
+        font-weight: $font-light;
+        margin-bottom: 1rem;
+      }
+      li {
+        font-size: 1.7rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .line {
+    grid-column: span $grid-col-4;
+    height: 1px;
+    background-color: $brand-clr;
+    @include tablet {
+      grid-column: span $grid-col-8;
+    }
+  }
+
+  &-bot {
+    grid-column: span $grid-col-4;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      grid-column: span $grid-col-8;
+    }
+    .logo {
+      height: 4rem;
+    }
+    button {
+      background-color: $brand-clr;
+      color: $light-clr;
+      border-radius: 4rem;
+      font-size: 1.4rem;
+      padding: 0.7rem 1.6rem;
+      cursor: pointer;
+    }
+  }
+}
+
+//======Animation======//
+.wave-path {
+  animation: wave-animation 10s linear infinite alternate;
+  color: $off-white-clr;
+}
+
+.wave-inverted {
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+@keyframes wave-animation {
+  0% {
+    d: path(
+      "M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z"
+    );
+  }
+  50% {
+    d: path(
+      "M655.558582,28.4898877 C500.191373,61.6062216 422.833785,83.5422763 266.940085,49.8995879 C112.480383,16.5663637 84.0992497,8.02840272 0,44.7243294 L0,150.727527 L1920,150.727527 L1920,49.8995879 C1580.91676,-34.8808285 1438.10804,73.6768193 1148.0266,38.0019829 C857.945166,2.32714659 810.925791,-4.62644617 655.558582,28.4898877 Z"
+    );
+  }
+  100% {
+    d: path(
+      "M842.322034,38.0019829 C686.954825,71.1183168 623.386282,53.08497 467.492582,19.4422816 C313.032879,-13.8909426 84.0992497,8.02840272 0,44.7243294 L0,150.727527 L1920,150.727527 L1920,76.8685643 C1512.23604,-35.3595639 1568.70222,67.4289432 1278.62078,31.7541069 C988.539347,-3.92072949 997.689243,4.88564905 842.322034,38.0019829 Z"
+    );
+  }
+}
