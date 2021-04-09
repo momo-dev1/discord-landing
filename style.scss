@@ -101,7 +101,7 @@ p {
 }
 //======sections======//
 .hero {
-  background: url("./images/hero-bg.jpg") center/cover;
+  background: url("../images/hero-bg.jpg") center/cover;
 
   &__header {
     @include flex-c;
@@ -145,6 +145,7 @@ p {
         font-size: $primary-title-font-size;
         @include tablet {
           margin: auto;
+          margin-bottom: 1.5rem;
         }
       }
       &-desc {
@@ -186,6 +187,7 @@ p {
       @include tablet {
         grid-template-columns: repeat($grid-col-8, 1fr);
       }
+
       img {
         grid-column: span 4;
         object-fit: contain;
@@ -199,10 +201,18 @@ p {
 
         &-title {
           font-size: 4rem;
+          @include desktop {
+            font-size: 5rem;
+            max-width: 80%;
+          }
         }
         &-desc {
           line-height: 3.5rem;
           margin-top: 3rem;
+          @include desktop {
+            grid-template-columns: repeat($grid-col-8, 1fr);
+            max-width: 80%;
+          }
         }
       }
     }
@@ -229,10 +239,17 @@ p {
 
         &-title {
           font-size: 4rem;
+          @include desktop {
+            font-size: 5rem;
+            max-width: 70%;
+          }
         }
         &-desc {
           line-height: 3.5rem;
           margin-top: 3rem;
+          @include desktop {
+            max-width: 80%;
+          }
         }
       }
     }
@@ -257,10 +274,17 @@ p {
 
         &-title {
           font-size: 4rem;
+          @include desktop {
+            font-size: 5rem;
+            max-width: 70%;
+          }
         }
         &-desc {
           line-height: 3.5rem;
           margin-top: 3rem;
+          @include desktop {
+            max-width: 80%;
+          }
         }
       }
     }
@@ -286,10 +310,20 @@ p {
         }
         &-title {
           font-size: 4rem;
+          @include desktop {
+            font-size: 5rem;
+            max-width: 70%;
+            margin: auto;
+            margin-bottom: 3rem;
+          }
         }
         &-desc {
           line-height: 3.5rem;
           margin-top: 3rem;
+          @include desktop {
+            max-width: 70%;
+            margin: auto;
+          }
         }
       }
     }

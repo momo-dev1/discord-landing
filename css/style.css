@@ -58,7 +58,7 @@ p {
 }
 
 .hero {
-  background: url("./images/hero-bg.jpg") center/cover;
+  background: url("../images/hero-bg.jpg") center/cover;
 }
 
 .hero__header {
@@ -128,6 +128,7 @@ p {
 @media screen and (min-width: 768px) {
   .hero__main .hero__content-title {
     margin: auto;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -206,9 +207,23 @@ p {
   font-size: 4rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .hero__collaboration .collaboration__content .collaboration-title {
+    font-size: 5rem;
+    max-width: 80%;
+  }
+}
+
 .hero__collaboration .collaboration__content .collaboration-desc {
   line-height: 3.5rem;
   margin-top: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__collaboration .collaboration__content .collaboration-desc {
+    grid-template-columns: repeat(8, 1fr);
+    max-width: 80%;
+  }
 }
 
 .hero__connect {
@@ -249,9 +264,22 @@ p {
   font-size: 4rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .hero__connect .connect__content .connect-title {
+    font-size: 5rem;
+    max-width: 70%;
+  }
+}
+
 .hero__connect .connect__content .connect-desc {
   line-height: 3.5rem;
   margin-top: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__connect .connect__content .connect-desc {
+    max-width: 80%;
+  }
 }
 
 .hero__moderation .moderation__content {
@@ -287,9 +315,22 @@ p {
   font-size: 4rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .hero__moderation .moderation__content .moderation-title {
+    font-size: 5rem;
+    max-width: 70%;
+  }
+}
+
 .hero__moderation .moderation__content .moderation-desc {
   line-height: 3.5rem;
   margin-top: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__moderation .moderation__content .moderation-desc {
+    max-width: 80%;
+  }
 }
 
 .hero__video-call {
@@ -329,9 +370,25 @@ p {
   font-size: 4rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .hero__video-call .video-call__content .video-call-title {
+    font-size: 5rem;
+    max-width: 70%;
+    margin: auto;
+    margin-bottom: 3rem;
+  }
+}
+
 .hero__video-call .video-call__content .video-call-desc {
   line-height: 3.5rem;
   margin-top: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__video-call .video-call__content .video-call-desc {
+    max-width: 70%;
+    margin: auto;
+  }
 }
 
 .hero__download__content {
