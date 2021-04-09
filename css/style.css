@@ -58,7 +58,7 @@ p {
 }
 
 .hero {
-  background: url("https://github.com/momolokii-dev/discord-clone/blob/master/assets/images/hero-bg.jpg") center/cover;
+  background: url("/images/hero-bg.jpg") center/cover;
 }
 
 .hero__header {
