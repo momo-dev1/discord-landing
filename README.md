@@ -7,7 +7,7 @@
 
   <h2 align="center">Discord - Landing Page</h2>
 
-  Discord landing is a fully responsive movie website page, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
+  Discord landing is a fully responsive Landing page, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
 
   <a  href="https://momo-dev1.github.io/discord-landing/"><strong>➥ Live Demo</strong></a>
 
